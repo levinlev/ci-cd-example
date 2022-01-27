@@ -1,0 +1,16 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  Client-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: cd client && npm install
+      - run: cd client && npm run test
