@@ -1,5 +1,7 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    branches: [main]
 jobs:
   Client-Tests:
     runs-on: ubuntu-latest
@@ -11,3 +13,9 @@ jobs:
           node-version: 16
       - run: cd client && npm install
       - run: cd client && npm run test
+
+  Deploy:
+    needs: [Client-Tests]
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl https://api.render.com/deploy/srv-c7pb6ehg7hp8d073d9qg?key=PVvurWUF3kk
