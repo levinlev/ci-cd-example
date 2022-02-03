@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          This is my first CI/CD
+          This is my second CI/CD
         </p>
       </header>
     </div>
